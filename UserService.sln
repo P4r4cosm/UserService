@@ -8,6 +8,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{61C49DAE-7AA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{CAC0F152-A792-4200-B595-D640B6B8365E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostgresInfrastructure", "PostgresInfrastructure\PostgresInfrastructure.csproj", "{591F7A7E-06AD-4FDB-9108-F6DB29245796}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{3B7D2544-D956-4A5B-93A2-56593540A230}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,8 +22,18 @@ Global
 		{CAC0F152-A792-4200-B595-D640B6B8365E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAC0F152-A792-4200-B595-D640B6B8365E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAC0F152-A792-4200-B595-D640B6B8365E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591F7A7E-06AD-4FDB-9108-F6DB29245796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591F7A7E-06AD-4FDB-9108-F6DB29245796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591F7A7E-06AD-4FDB-9108-F6DB29245796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591F7A7E-06AD-4FDB-9108-F6DB29245796}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7D2544-D956-4A5B-93A2-56593540A230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7D2544-D956-4A5B-93A2-56593540A230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7D2544-D956-4A5B-93A2-56593540A230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7D2544-D956-4A5B-93A2-56593540A230}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CAC0F152-A792-4200-B595-D640B6B8365E} = {46C96E73-7738-4793-93FD-6FADBED9ED25}
+		{591F7A7E-06AD-4FDB-9108-F6DB29245796} = {B26A59C5-1025-4553-A919-839DDB540B4C}
+		{3B7D2544-D956-4A5B-93A2-56593540A230} = {46C96E73-7738-4793-93FD-6FADBED9ED25}
 	EndGlobalSection
 EndGlobal

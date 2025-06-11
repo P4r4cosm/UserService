@@ -125,10 +125,11 @@ public class User
     }
 
     // --- Методы для проверок ---
-    public void VerifyPassword(string password)
+    public bool VerifyPassword(string password)
     {
         if (!BCrypt.Verify(password, Password))
-            throw new DomainValidationException("The password is incorrect");
+            return false;
+        return true;
     }
 
     private static string HashPassword(string password)
