@@ -20,6 +20,9 @@ public static class DependencyInjection
         // Регистрируем репозиторий
         services.AddScoped<IUserRepository, PostgresUserRepository>();
         
+        //регистрируем seeder
+        services.AddScoped<DatabaseSeeder>();
+        
         return services;
     }
 }

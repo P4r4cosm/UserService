@@ -120,7 +120,20 @@ public class UserService
         var userToRestore = await AuthorizeAdminActionAsync(actorLogin, loginToRestore);
         await _userRepository.RestoreAsync(userToRestore, actorLogin);
     }
+        
+    public async Task<User?> AuthenticateAsync(string login, string password)
+    {
+        var user = await _userRepository.GetByLoginAsync(login);
 
+        // Проверяем, что пользователь существует, активен и пароль верен
+        if (user == null || !user.IsActive || !user.VerifyPassword(password))
+        {
+            return null; // Аутентификация не удалась
+        }
+
+        return user; // Успех, возвращаем полную сущность User
+    }
+    
     #region Private Helpers
 
     // Помощник для операций, которые может делать админ ИЛИ сам пользователь

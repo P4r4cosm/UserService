@@ -2,7 +2,7 @@
 
 namespace Application.Dtos;
 
-public class UserDto
+public record class UserDto
 {
     public Guid Guid { get; set; }
     public string Login { get; set; }

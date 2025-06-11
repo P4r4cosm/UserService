@@ -43,7 +43,7 @@ public class PostgresUserRepository: IUserRepository
     {
         var cutoffDate = DateTime.UtcNow.AddYears(-age);
         return await _dbContext.Users
-            .Where(u => u.IsActive && u.Birthday.HasValue && u.Birthday.Value <= cutoffDate)
+            .Where(u => u.RevokedOn==null && u.Birthday.HasValue && u.Birthday.Value <= cutoffDate)
             .OrderBy(u => u.CreatedOn)
             .ToListAsync();
     }

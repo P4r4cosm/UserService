@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace Domain.Entities;
 
@@ -6,6 +7,7 @@ using BCrypt.Net;
 
 public class User
 {
+    [Key]
     public Guid Guid { get; private set; }
     public string Login { get; private set; } //Уникальный Логин (запрещены все символы кроме латинских букв и цифр)
     public string Password { get; private set; } // Пароль(запрещены все символы кроме латинских букв и цифр) (хэшируется)
@@ -36,6 +38,11 @@ public class User
         Admin = admin;
         CreatedOn = DateTime.UtcNow;
         CreatedBy = createdBy;
+    }
+    // Для использования EF Core
+    private User()
+    {
+        // Не вызываем валидацию, так как объект создаётся из БД
     }
 
     public bool IsActive => RevokedOn == null;
