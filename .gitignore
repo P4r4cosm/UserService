@@ -1,0 +1,92 @@
+# ===================================================================
+# Standard .NET/.NET Core gitignore file for Visual Studio & Rider
+# ===================================================================
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+
+# JetBrains Rider specific
+.idea/
+*.sln.DotSettings.user
+
+# Visual Studio specific
+.vs/
+*.sln.DotSettings
+# Visual Studio 2015 cache file
+project.lock.json
+project.fragment.lock.json
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Pp]ublish/
+
+# NuGet packages
+packages/
+*.nupkg
+*.snupkg
+# NuGet v3's packages folder
+.nuget/
+
+# Secrets and user-specific settings
+# (never commit secrets)
+*.secrets.json
+secrets.json
+appsettings.Development.json
+
+# Local user secrets
+# (see https://docs.microsoft.com/aspnet/core/security/app-secrets)
+secrets/
+
+# Test results
+TestResults/
+*.trx
+*.coverlet.json
+*.xml
+
+# Roslyn files
+.roslyn/
+
+# Tooling
+# (for example, local dotnet tools)
+.config/
+.tools/
+
+# OS generated files
+# ===================================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ===================================================================
+# Miscellaneous
+# ===================================================================
+
+# Log and temporary files
+*.log
+*.tmp
+*.temp
+
+# Environment files
+.env

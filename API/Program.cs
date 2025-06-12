@@ -1,5 +1,3 @@
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 using API.Middleware;
 using Application.Services;
@@ -96,13 +94,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-async Task SeedDatabaseAsync(IHost host)
-{
-    using (var scope = host.Services.CreateScope())
-    {
-        var services = scope.ServiceProvider;
-        var seeder = services.GetRequiredService<DatabaseSeeder>();
-        await seeder.SeedAsync();
-    }
-}
