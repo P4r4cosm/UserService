@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-namespace PostgresInfrastructure.Persistence;
+﻿using Microsoft.EntityFrameworkCore;
+using PostgresInfrastructure.Persistence;
 
 public static class DatabaseInitializer
 {
