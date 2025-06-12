@@ -59,12 +59,6 @@ public class ExceptionHandlerMiddleware
 
         response.StatusCode = (int)statusCode;
         
-        if (statusCode == HttpStatusCode.Forbidden)
-        {
-            await response.CompleteAsync();
-            return;
-        }
-
         var result = JsonSerializer.Serialize(new { Error = message });
         await response.WriteAsync(result);
     }

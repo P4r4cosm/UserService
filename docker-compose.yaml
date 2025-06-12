@@ -11,6 +11,29 @@ services:
     ports:
       - "5435:5432"
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
-      - ./logs/postgres:/var/log/postgresql
-      - ./postgres-initdb:/docker-entrypoint-initdb.d
+      - ./postgres-data:/var/lib/postgresql/data 
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d mydb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  user_service_api:
+    container_name: user_service_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080" 
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=user_service_postgres;Port=5432;Database=mydb;Username=admin;Password=admin
+      - Jwt__Key=${JWT_KEY:-ThisIsMySuperSecretKeyThisIsMySuperSecretKey}
+      - Jwt__Issuer=${JWT_ISSUER:-UserServiceAPI}
+      - Jwt__Audience=${JWT_AUDIENCE:-UserServiceClients}
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080 
+    depends_on:
+      user_service_postgres:
+        condition: service_healthy
+volumes:
+  postgres-data:

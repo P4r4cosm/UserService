@@ -73,10 +73,10 @@ public class UsersController : ControllerBase
     }
 
     // 7. Запрос данных о себе
-    [HttpGet("me")]
-    public async Task<IActionResult> GetMyProfile([FromBody]LoginRequestDto dto)
+    [HttpPost("me/profile-data")] 
+    public async Task<IActionResult> GetMyProfileWithPassword([FromBody] PasswordConfirmationDto dto)
     {
-        var user = await _userService.GetUserByLoginAndPasswordAsync(dto.Login, dto.Password, CurrentUserLogin);
+        var user = await _userService.GetUserByLoginAndPasswordAsync(CurrentUserLogin, dto.Password, CurrentUserLogin);
         return Ok(user);
     }
 
