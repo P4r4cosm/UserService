@@ -18,33 +18,6 @@
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="8.1.4" />
         <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="8.1.4" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-      <Content Include="obj\API.csproj.nuget.dgspec.json" />
-      <Content Include="obj\Debug\net9.0\API.AssemblyInfoInputs.cache" />
-      <Content Include="obj\Debug\net9.0\API.assets.cache" />
-      <Content Include="obj\Debug\net9.0\API.csproj.AssemblyReference.cache" />
-      <Content Include="obj\Debug\net9.0\API.csproj.CoreCompileInputs.cache" />
-      <Content Include="obj\Debug\net9.0\API.csproj.FileListAbsolute.txt" />
-      <Content Include="obj\Debug\net9.0\API.csproj.Up2Date" />
-      <Content Include="obj\Debug\net9.0\API.dll" />
-      <Content Include="obj\Debug\net9.0\API.genruntimeconfig.cache" />
-      <Content Include="obj\Debug\net9.0\API.MvcApplicationPartsAssemblyInfo.cache" />
-      <Content Include="obj\Debug\net9.0\API.pdb" />
-      <Content Include="obj\Debug\net9.0\API.sourcelink.json" />
-      <Content Include="obj\Debug\net9.0\apphost.exe" />
-      <Content Include="obj\Debug\net9.0\staticwebassets.build.endpoints.json" />
-      <Content Include="obj\Debug\net9.0\staticwebassets.build.json" />
-      <Content Include="obj\project.assets.json" />
-      <Content Include="obj\project.nuget.cache" />
-      <Content Include="obj\project.packagespec.json" />
-      <Content Include="obj\rider.project.model.nuget.info" />
-      <Content Include="obj\rider.project.restore.info" />
-    </ItemGroup>
-
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\PostgresInfrastructure\PostgresInfrastructure.csproj" />
